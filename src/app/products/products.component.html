@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+            <td> {{product.id}}</td>
+            <td> {{product.name}}</td>
+            <td> {{product.price}}</td>
+            <td> 
+                <a [routerLink]="['detail', product.id]" routerLinkActive="router-link-active"> <button [ngClass]="'btn btn-success'"> Edit </button></a> &nbsp; 
+                <a> <button  [ngClass]="'btn btn-success'"> Delete </button></a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <router-outlet></router-outlet>
